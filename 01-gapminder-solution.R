@@ -17,7 +17,7 @@ ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
 # Hint: think about how to split your plots to show different subsets of data
 ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
   geom_histogram() +
-  facet_wrap(~ continent)
+  facet_wrap(facets = vars(continent))
 
 # compare the distribution of life expectancy, by continent by generating a boxplot
 ggplot(data = gapminder, mapping = aes(x = continent, y = lifeExp)) +

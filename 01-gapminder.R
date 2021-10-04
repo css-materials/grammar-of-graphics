@@ -17,7 +17,7 @@ ggplot(data = ________, mapping = aes(x = ________)) +
 # Hint: think about how to split your plots to show different subsets of data
 ggplot(data = ________, mapping = aes(x = ________)) +
   geom________() +
-  ________(~ ________)
+  ________(facets = vars(________))
 
 # compare the distribution of life expectancy, by continent by generating a boxplot
 ggplot(data = ________, mapping = aes(x = ________, y = ________)) +
