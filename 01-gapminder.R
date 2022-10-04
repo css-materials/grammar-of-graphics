@@ -42,6 +42,13 @@ ggplot(data = ________,
   geom________() +
   geom________()
 
+## add a title to the last graph you generated
+ggplot(data = ________,
+       mapping = aes(x = ________, y = ________, color = ________)) +
+  geom________() +
+  geom________() + 
+  ggtitle(______________)
+  
 ## bonus: identify the outlying countries on the right-side of the graph
 ## by labeling each observation with the country name
 ggplot(data = ________,
@@ -49,6 +56,7 @@ ggplot(data = ________,
   geom________() +
   geom________()
 
+## bonus: transform the data to logarithmic scale
 
 
 

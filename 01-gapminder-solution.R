@@ -42,9 +42,22 @@ ggplot(data = gapminder,
   geom_point() +
   geom_smooth()
 
+## add a title to the last graph you generated
+ggplot(data = gapminder,
+       mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
+  geom_smooth() +
+  ggtitle('GDP per Capita by Continent')
+
 ## bonus: identify the outlying countries on the right-side of the graph
 ## by labeling each observation with the country name
 ggplot(data = gapminder,
        mapping = aes(x = gdpPercap, y = lifeExp, label = country)) +
   geom_smooth() +
   geom_text()
+  
+## bonus: transform the data to logarithmic scale
+ggplot(data = gapminder,
+       mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
+  scale_x_log10()
