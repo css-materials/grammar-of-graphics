@@ -56,7 +56,7 @@ ggplot(data = ________,
   geom________() +
   geom________()
 
-## bonus: transform the data to logarithmic scale
+## bonus: transform the data to logarithmic scale, write the full code
 
 
 
