@@ -7,8 +7,11 @@ library(tibble)
 library(ggplot2)
 library(gapminder)
 
-# view header of the dataset
-gapminder
+# save gapminder data in your environment
+gapminder <- gapminder
+
+# view first few rows of the dataset
+head(gapminder)
 
 # view help file for the dataset
 ?gapminder
