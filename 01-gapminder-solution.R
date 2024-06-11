@@ -1,20 +1,24 @@
 # PRACTICE USING GGPLOT2
-# book: https://r4ds.had.co.nz/data-visualisation.html#data-visualisation
+# book 1st Ed: https://r4ds.had.co.nz/data-visualisation.html#data-visualisation
+# book 2nd Ed: https://r4ds.hadley.nz/data-visualize
 
 # load required packages (if you are using R locally, install them first)
 library(tibble)
 library(ggplot2)
 library(gapminder)
 
-# view header of the dataset
-gapminder
+# save gapminder data in your environment
+gapminder <- gapminder
+
+# view first few rows of the dataset
+head(gapminder)
 
 # view help file for the dataset
 ?gapminder
 
 
 # replace the _____ with the correct syntax
-# for each question, spend a minute to interpret the plot
+# after you fill the blanks, spend a minute to interpret the plot
 
 
 # generate a histogram of life expectancy
@@ -22,18 +26,18 @@ ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
   geom_histogram()
 
 
-# generate the same histogram, adjusting bins as you prefer
-# note geom_histogram() uses the stat_bin() layer
+# generate the same histogram, but this time adjust the number of bins as you prefer
+# note geom_histogram() uses stat_bin() as default statistical transformation
 # see https://ggplot2.tidyverse.org/reference/geom_histogram.html
 ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
   geom_histogram(bins = 50) # number of bins
 
 ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
-  geom_histogram(binwidth = 50) # width of each bin
+  geom_histogram(binwidth = 50) # width of each bin (notice the difference)
 
 
 # generate separate histograms of life expectancy for each continent
-# hint: think how to split your plots to show different subsets of data
+# hint: facet_wrap() splits your plot into subplots, each representing a different subsets of data
 ggplot(data = gapminder, mapping = aes(x = lifeExp)) +
   geom_histogram() +
   facet_wrap(facets = vars(continent))
@@ -68,12 +72,16 @@ ggplot(data = gapminder,
        mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
   geom_point() +
   geom_smooth() +
-  ggtitle('GDP per Capita by Continent')
+  ggtitle("GDP per Capita and Life Expectancy by Continent")
 
 
-# identify the outlying countries on the right-side of the graph
-# by labeling each observation with the country name
+# now use labs() to add a subtitle and x and y labels 
+# labs() is more flexible, can also add subtitle, x-axis label, etc.
 ggplot(data = gapminder,
-       mapping = aes(x = gdpPercap, y = lifeExp, label = country)) +
+       mapping = aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
   geom_smooth() +
-  geom_text()
+  labs(title = "GDP per Capita and Life Expectancy by Continent",
+       subtitle = "Gapminder data",
+       x = "GDP per Capita",
+       y = "Life Expetancy")

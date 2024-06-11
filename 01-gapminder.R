@@ -1,5 +1,6 @@
 # PRACTICE USING GGPLOT2
-# book: https://r4ds.had.co.nz/data-visualisation.html#data-visualisation
+# book 1st Ed: https://r4ds.had.co.nz/data-visualisation.html#data-visualisation
+# book 2nd Ed: https://r4ds.hadley.nz/data-visualize
 
 # load required packages (if you are using R locally, install them first)
 library(tibble)
@@ -65,9 +66,5 @@ ggplot(data = ________,
   ggtitle(______________)
   
 
-# identify the outlying countries on the right-side of the graph
-# by labeling each observation with the country name
-ggplot(data = ________,
-       mapping = aes(x = ________, y = ________, label = ________)) +
-  geom________() +
-  geom________()
+# now use labs() to add a subtitle and x and y labels 
+# labs() is more flexible, can also add subtitle, x-axis label, etc.
