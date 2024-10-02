@@ -2,13 +2,15 @@
 # book 1st Ed: https://r4ds.had.co.nz/data-visualisation.html#data-visualisation
 # book 2nd Ed: https://r4ds.hadley.nz/data-visualize
 
+# Notice this is a R script not a Rmd document
+
 # load required packages (if you are using R locally, install them first)
 library(tibble)
 library(ggplot2)
 library(gapminder)
 
-# save gapminder data in your environment
-gapminder <- gapminder
+# load gapminder data 
+data(gapminder)
 
 # view first few rows of the dataset
 head(gapminder)
